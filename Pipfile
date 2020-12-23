@@ -4,12 +4,12 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-opencv-python = "*"
 flask = "*"
 numpy = "*"
 torch = "*"
 torchvision = "*"
 gunicorn = "*"
+opencv-python-headless = "*"
 
 [dev-packages]
 
