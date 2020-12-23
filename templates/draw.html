@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Drawing App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+
+<body class="container mt-3">
+    <h1 class="text-center">"Quick, Draw!"</h1>
+    <a class="link" data-bs-toggle="modal" data-bs-target="#objectListModal"><h2 class="text-center">Список распозноваемых объектов</h2></a>
+    <div class="modal fade" id="objectListModal" tabindex="-1" aria-labelledby="objectListModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="objectListModal">Список распозноваемых объектов</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li>The_Eiffel_Tower</li>
+                        <li>The_Great_Wall_of_China</li>
+                        <li>The_Mona_Lisa</li>
+                        <li>airplane</li>
+                        <li>alarm_clock</li>
+                        <li>ambulance</li>
+                        <li>angel</li>
+                        <li>animal_migration</li>
+                        <li>ant</li>
+                        <li>anvil</li>
+                        <li>apple</li>
+                        <li>arm</li>
+                        <li>asparagus</li>
+                        <li>axe</li>
+                        <li>backpack</li>
+                        <li>banana</li>
+                        <li>bandage</li>
+                        <li>barn</li>
+                        <li>baseball</li>
+                        <li>baseball_bat</li>
+                        <li>beard</li>
+                        <li>bed</li>
+                        <li>bee</li>
+                        <li>belt</li>
+                        <li>bench</li>
+                        <li>bicycle</li>
+                        <li>bird</li>
+                        <li>birthday_cake</li>
+                        <li>book</li>
+                        <li>bucket</li>
+                        <li>bus</li>
+                        <li>bush</li>
+                        <li>butterfly</li>
+                        <li>cactus</li>
+                        <li>camel</li>
+                        <li>car</li>
+                        <li>carrot</li>
+                        <li>castle</li>
+                        <li>cat</li>
+                        <li>ceiling_fan</li>
+                        <li>cell_phone</li>
+                        <li>dog</li>
+                        <li>dolphin</li>
+                        <li>donut</li>
+                        <li>door</li>
+                        <li>envelope</li>
+                        <li>eraser</li>
+                        <li>eye</li>
+                        <li>eyeglasses</li>
+                        <li>fish</li>
+                        <li>guitar</li>
+                        <li>ice_cream</li>
+                        <li>laptop</li>
+                        <li>leaf</li>
+                        <li>lollipop</li>
+                        <li>nail</li>
+                        <li>ocean</li>
+                        <li>octopus</li>
+                        <li>pants</li>
+                        <li>paper_clip</li>
+                        <li>pencil</li>
+                        <li>shark</li>
+                        <li>shoe</li>
+                        <li>skull</li>
+                        <li>smiley_face</li>
+                        <li>snail</li>
+                        <li>snake</li>
+                        <li>stairs</li>
+                        <li>star</li>
+                        <li>sun</li>
+                        <li>sword</li>
+                        <li>toothbrush</li>
+                        <li>toothpaste</li>
+                        <li>train</li>
+                        <li>tree</li>
+                        <li>wheel</li>
+                        <li>windmill</li>
+                        <li>wristwatch</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <canvas id="canvas" height=400 class="border border-primary border-5 rounded mx-auto" style="display: block;"></canvas><br>
+    <button type="button" id="submit" class="btn btn-primary">Отправить</button>
+    <button type="button" id="clear" class="btn btn-light">Очистить</button>
+    <div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resultModalModal">Результат</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="result"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js" integrity="sha256-JLmknTdUZeZZ267LP9qB+/DT7tvxOOKctSKeUC2KT6E=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='draw.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='draw_pc.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='draw_phone.js') }}"></script>
+</body>
+</html>
