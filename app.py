@@ -11,7 +11,7 @@ from classes import classes
 
 num_classes = len(classes)
 
-model = models.resnet18(pretrained=True)
+model = models.resnet18(pretrained=False)
 new_conv1 = nn.Conv2d(1, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
 new_conv1.weight.data = model.conv1.weight.data.sum(dim=1, keepdim=True)
 model.conv1 = new_conv1
